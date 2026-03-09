@@ -112,6 +112,7 @@ namespace demoEFapp.Controllers.Api
 
             _studentRepository.UpdateStudent(student);
 
+            //204 is returned from no content
             return NoContent();
         }
     }
