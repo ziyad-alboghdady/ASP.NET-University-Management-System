@@ -1,7 +1,9 @@
+using System.Text.Json.Serialization;
 using demoEFapp.Context;
 using demoEFapp.Repositoy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +39,14 @@ builder.Services.AddTransient<IStudentRepository, StudentRepository>();
 builder.Services.AddTransient<ITeacherRepository, TeacherRepository>();
 builder.Services.AddTransient < IRoomRepository, RoomRepository > ();
 builder.Services.AddTransient<ICourseRepository, CourseRepository>();
+
+
+// this one is temporary cause the api returns cycles cause of the navagation property in the models so we are using this till we make the DTOs
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 var app = builder.Build();
 
 
@@ -52,6 +62,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+//app.MapControllers();
+
 
 app.MapControllerRoute(
     name: "default",
