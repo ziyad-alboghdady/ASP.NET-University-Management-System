@@ -288,57 +288,42 @@ demoEFapp
 │
 └── Migrations
 ```
+# ⚙️ Technologies Used
 
-⚙️ Technologies Used
+- ASP.NET Core MVC
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server / PostgreSQL
+- ASP.NET Identity
+- Razor Views
+- Bootstrap UI
+- LINQ
+- Repository Pattern
+- DTO Pattern
 
-ASP.NET Core MVC
 
-ASP.NET Core Web API
-
-Entity Framework Core
-
-SQL Server / PostgreSQL
-
-ASP.NET Identity
-
-Razor Views
-
-Bootstrap UI
-
-LINQ
-
-Repository Pattern
-
-DTO Pattern
-
-🧠 Concepts Demonstrated
+# 🧠 Concepts Demonstrated
 
 This project demonstrates important backend concepts:
 
-MVC Architecture
+- MVC Architecture
+- REST API Design
+- Entity Framework Core
+- Repository Pattern
+- Authentication & Authorization
+- Pagination
+- DTO usage
+- File Upload Handling
+- Role-based security
+- LINQ querying
+- Clean project structure
 
-REST API Design
 
-Entity Framework Core
+# 🛠️ How to Run the Project
 
-Repository Pattern
+## 1️⃣ Clone the repository
 
-Authentication & Authorization
-
-Pagination
-
-DTO usage
-
-File Upload Handling
-
-Role-based security
-
-LINQ querying
-
-Clean project structure
-
-🛠️ How to Run the Project
-1️⃣ Clone the repository
+```bash
 git clone https://github.com/ziyad-alboghdady/ASP.NET-University-Management-System.git
 2️⃣ Open the solution in Visual Studio
 
