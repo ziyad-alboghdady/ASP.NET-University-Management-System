@@ -247,7 +247,9 @@ GET /api/students?pageNumber=1&pageSize=5
   ]
 }
 ```
-📁 Project Structure
+# 📁 Project Structure
+
+```
 demoEFapp
 │
 ├── Controllers
@@ -285,6 +287,8 @@ demoEFapp
 ├── Views
 │
 └── Migrations
+```
+
 ⚙️ Technologies Used
 
 ASP.NET Core MVC
