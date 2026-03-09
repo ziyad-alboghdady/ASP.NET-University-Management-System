@@ -31,3 +31,7 @@ publish/
 # Database
 *.mdf
 *.ldf
+bin/
+obj/
+.vs/
+*.user
