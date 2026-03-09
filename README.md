@@ -221,17 +221,17 @@ Implemented using **ASP.NET Identity**.
 - Admin role assignment
 - Authorization checks
 
-Example:
+# 📡 API Example
 
-```csharp
-@if (User.IsInRole("Admin"))
-{
-    Delete student button
-}
-📡 API Example
-Get Students
+## Get Students
+
+
 GET /api/students?pageNumber=1&pageSize=5
-Response
+
+
+### Response
+
+```json
 {
   "pageNumber": 1,
   "pageSize": 5,
@@ -246,6 +246,7 @@ Response
     }
   ]
 }
+```
 📁 Project Structure
 demoEFapp
 │
