@@ -22,7 +22,7 @@ obj/
 .DS_Store
 Thumbs.db
 
-# ASP.NET Core
+# ASP.NET Core libraries
 wwwroot/lib/
 
 # Publish output
@@ -31,7 +31,3 @@ publish/
 # Database
 *.mdf
 *.ldf
-bin/
-obj/
-.vs/
-*.user
