@@ -288,7 +288,7 @@ demoEFapp
 │
 └── Migrations
 ```
-# ⚙️ Technologies Used
+## ⚙️ Technologies Used
 
 - ASP.NET Core MVC
 - ASP.NET Core Web API
@@ -301,8 +301,7 @@ demoEFapp
 - Repository Pattern
 - DTO Pattern
 
-
-# 🧠 Concepts Demonstrated
+## 🧠 Concepts Demonstrated
 
 This project demonstrates important backend concepts:
 
@@ -318,54 +317,64 @@ This project demonstrates important backend concepts:
 - LINQ querying
 - Clean project structure
 
+## 🛠️ How to Run the Project
 
-# 🛠️ How to Run the Project
-
-## 1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/ziyad-alboghdady/ASP.NET-University-Management-System.git
-2️⃣ Open the solution in Visual Studio
+```
 
-Open the .sln file.
+### 2️⃣ Open the solution in Visual Studio
 
-3️⃣ Restore packages
+Open the `.sln` file.
+
+### 3️⃣ Restore packages
+
+```bash
 dotnet restore
-4️⃣ Update the database
+```
+
+### 4️⃣ Update the database
+
+```powershell
 Update-Database
+```
 
 or
 
+```bash
 dotnet ef database update
-5️⃣ Run the project
+```
+
+### 5️⃣ Run the project
+
+```bash
 dotnet run
-👨‍💻 Author
+```
 
-Ziyad Alboghdady
+## 👨‍💻 Author
 
-Computer Science Student
+**Ziyad Alboghdady**
+
+Computer Science Student  
 Backend Developer (ASP.NET Core)
 
-🔗 GitHub
+### 🔗 GitHub
 
-https://github.com/ziyad-alboghdady
+[ziyad-alboghdady](https://github.com/ziyad-alboghdady)
 
-🔗 LinkedIn
+### 🔗 LinkedIn
 
-https://www.linkedin.com/in/ziyad-alboghdady-a50ab8247
+[Ziyad Alboghdady](https://www.linkedin.com/in/ziyad-alboghdady-a50ab8247)
 
-📌 Future Improvements
+## 📌 Future Improvements
 
 Planned enhancements:
 
-Search + Pagination
-
-SignalR real-time notifications
-
-Swagger API documentation
-
-Advanced filtering & sorting
-
-API authentication with JWT
-
-Unit testing
+- Search + Pagination
+- SignalR real-time notifications
+- Swagger API documentation
+- Advanced filtering & sorting
+- API authentication with JWT
+- Unit testing
