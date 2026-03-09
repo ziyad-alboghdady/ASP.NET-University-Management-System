@@ -1,0 +1,47 @@
+﻿@model demoEFapp.ViewModels.StudentCourseVM
+
+@{
+    ViewData["Title"] = "Register Student";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <div class="mb-4">
+                    <h2 class="fw-bold mb-1">Register Student in Course</h2>
+                    <p class="text-muted mb-0">Choose a student and a course, then submit the registration.</p>
+                </div>
+
+                <form asp-action="Register" method="post">
+                    <div class="mb-3">
+                        <label for="StudentId" class="form-label fw-semibold">Student</label>
+                        <select name="StudentId" id="StudentId" class="form-select form-select-lg">
+                            <option value="">-- Select Student --</option>
+                            @foreach (var student in Model.Students)
+                            {
+                                <option value="@student.StudentId">@student.StudentName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="CourseId" class="form-label fw-semibold">Course</label>
+                        <select name="CourseId" id="CourseId" class="form-select form-select-lg">
+                            <option value="">-- Select Course --</option>
+                            @foreach (var course in Model.Courses)
+                            {
+                                <option value="@course.CourseId">@course.CourseName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">Register</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Back to Students</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

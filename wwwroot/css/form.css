@@ -1,0 +1,142 @@
+﻿body {
+    background: #f4f7fb;
+}
+
+.create-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+.create-card {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+}
+
+.create-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+    .create-header h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+        color: #1f2937;
+        font-weight: 700;
+    }
+
+    .create-header p {
+        color: #6b7280;
+        margin: 0;
+        font-size: 15px;
+    }
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.control-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+    display: block;
+}
+
+.form-control {
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    transition: 0.3s ease;
+    box-shadow: none;
+}
+
+    .form-control:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.15);
+    }
+
+.form-check {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.form-check-label {
+    font-weight: 500;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.form-check-input {
+    margin-top: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.text-danger {
+    font-size: 14px;
+    margin-top: 6px;
+    display: block;
+}
+
+.btn-group-custom {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-custom {
+    flex: 1;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.btn-create {
+    background: #2563eb;
+    color: white;
+}
+
+    .btn-create:hover {
+        background: #1d4ed8;
+        color: white;
+    }
+
+.btn-home {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+    .btn-home:hover {
+        background: #d1d5db;
+        color: #111827;
+    }
+
+.back-link {
+    text-align: center;
+    margin-top: 18px;
+}
+
+    .back-link a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }

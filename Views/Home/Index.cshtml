@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="py-4">
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <h1 class="fw-bold mb-3">Student Management System</h1>
+                    <p class="text-muted mb-4 fs-5">
+                        A simple ASP.NET MVC project for managing students, teachers, courses, rooms,
+                        and course registrations in one place.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a asp-controller="Student" asp-action="Index" class="btn btn-primary px-4">
+                            View Students
+                        </a>
+                        <a asp-controller="Student" asp-action="Create" class="btn btn-outline-primary px-4">
+                            Add Student
+                        </a>
+                        <a asp-controller="Student" asp-action="Register" class="btn btn-outline-secondary px-4">
+                            Register Student
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <div class="p-4 rounded-4" style="background:#f8fafc;">
+                        <h3 class="fw-bold text-primary mb-2">University Management System</h3>
+                        <p class="text-muted mb-0">
+                            Clean, simple, and practical university management project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100 text-center">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold text-primary">@ViewBag.StudentsCount</h3>
+                    <p class="text-muted mb-0">Students</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100 text-center">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold text-primary">@ViewBag.TeachersCount</h3>
+                    <p class="text-muted mb-0">Teachers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100 text-center">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold text-primary">@ViewBag.CoursesCount</h3>
+                    <p class="text-muted mb-0">Courses</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100 text-center">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold text-primary">@ViewBag.RoomsCount</h3>
+                    <p class="text-muted mb-0">Rooms</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold">Students</h4>
+                    <p class="text-muted">
+                        Add, edit, delete, and manage student information with profile photos.
+                    </p>
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-sm btn-primary">
+                        Open
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold">Teachers</h4>
+                    <p class="text-muted">
+                        Manage teacher records and organize academic data more clearly.
+                    </p>
+                    <a asp-controller="Teacher" asp-action="Index" class="btn btn-sm btn-primary">
+                        Open
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold">Courses</h4>
+                    <p class="text-muted">
+                        Manage available courses and support student course registration.
+                    </p>
+                    <a asp-controller="Course" asp-action="Index" class="btn btn-sm btn-primary">
+                        Open
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold">Rooms</h4>
+                    <p class="text-muted">
+                        Organize rooms and keep academic resources structured and accessible.
+                    </p>
+                    <a asp-controller="Room" asp-action="Index" class="btn btn-sm btn-primary">
+                        Open
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

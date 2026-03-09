@@ -1,0 +1,83 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-wrapper {
+    min-height: calc(100vh - 140px);
+}
+
+.custom-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    color: #111827 !important;
+}
+
+.nav-link {
+    color: #374151 !important;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+    .nav-link:hover {
+        color: #2563eb !important;
+    }
+
+.nav-register-btn {
+    background: #2563eb;
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
+    .nav-register-btn:hover {
+        background: #1d4ed8;
+        color: white !important;
+    }
+
+.custom-footer {
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #6b7280;
+    padding: 18px 0;
+    margin-top: 30px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}

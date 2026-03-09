@@ -1,0 +1,68 @@
+﻿@model demoEFapp.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <div class="mb-4">
+                    <h2 class="fw-bold mb-1">Edit Student</h2>
+                    <p class="text-muted mb-0">Update student information and optionally upload a new photo.</p>
+                </div>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input asp-for="StudentId" type="hidden" />
+
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="StudentName" class="form-label fw-semibold"></label>
+                        <input asp-for="StudentName" class="form-control form-control-lg" placeholder="Enter student name" />
+                        <span asp-validation-for="StudentName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="StudentAge" class="form-label fw-semibold"></label>
+                        <input asp-for="StudentAge" class="form-control form-control-lg" placeholder="Enter student age" />
+                        <span asp-validation-for="StudentAge" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="form-check form-switch d-flex align-items-center gap-2 p-0 border-0 shadow-none">
+                            <input asp-for="IsActive" class="form-check-input m-0" type="checkbox" />
+                            <label asp-for="IsActive" class="form-check-label fw-semibold m-0"></label>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.PhotoName))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold d-block">Current Photo</label>
+                            <img src="~/StudentPictures/@Model.PhotoName"
+                                 alt="Student Photo"
+                                 style="width:90px;height:90px;object-fit:cover;border-radius:50%;border:2px solid #e5e7eb;" />
+                        </div>
+                    }
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">New Student Photo</label>
+                        <input type="file" name="StudentPhoto" class="form-control" />
+                        <div class="form-text">Optional. Leave empty to keep the current photo.</div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">Save Changes</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

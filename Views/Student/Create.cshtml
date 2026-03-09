@@ -1,0 +1,56 @@
+﻿@model demoEFapp.Models.Student
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <div class="mb-4">
+                    <h2 class="fw-bold mb-1">Add New Student</h2>
+                    <p class="text-muted mb-0">Enter student information and optionally upload a profile photo.</p>
+                </div>
+
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="StudentName" class="form-label fw-semibold"></label>
+                        <input asp-for="StudentName" class="form-control form-control-lg" placeholder="Enter student name" />
+                        <span asp-validation-for="StudentName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="StudentAge" class="form-label fw-semibold"></label>
+                        <input asp-for="StudentAge" class="form-control form-control-lg" placeholder="Enter student age" />
+                        <span asp-validation-for="StudentAge" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="form-check form-switch d-flex align-items-center gap-2 p-0 border-0 shadow-none">
+                            <input asp-for="IsActive" class="form-check-input m-0" type="checkbox" />
+                            <label asp-for="IsActive" class="form-check-label fw-semibold m-0"></label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Student Photo</label>
+                        <input type="file" name="StudentPhoto" class="form-control" />
+                        <div class="form-text">Optional. You can add the student without a photo.</div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">Create</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
