@@ -1,4 +1,5 @@
 ﻿using demoEFapp.DTOs;
+using demoEFapp.Models;
 using demoEFapp.Repositoy;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +58,36 @@ namespace demoEFapp.Controllers.Api
 
             //200 ok
             return Ok(studentDto);
+        }
+
+        [HttpPost]
+        public IActionResult Create(StudentCreateDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var student = new Student
+            {
+                StudentName = dto.StudentName,
+                StudentAge = dto.StudentAge,
+                IsActive = dto.IsActive,
+                PhotoName = dto.PhotoName
+            };
+
+            _studentRepository.CreateNewStudent(student);
+
+            var studentReadDto = new StudentReadDto
+            {
+                StudentId = student.StudentId,
+                StudentName = student.StudentName,
+                StudentAge = student.StudentAge,
+                IsActive = student.IsActive,
+                PhotoName = student.PhotoName
+            };
+
+            return CreatedAtAction(nameof(GetById), new { id = student.StudentId }, studentReadDto);
         }
     }
 }
