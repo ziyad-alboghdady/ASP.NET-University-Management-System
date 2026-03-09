@@ -357,7 +357,7 @@ dotnet run
 
 **Ziyad Alboghdady**
 
-Computer Science Student  
+Software Engineering Student  
 Backend Developer (ASP.NET Core)
 
 ### 🔗 GitHub
