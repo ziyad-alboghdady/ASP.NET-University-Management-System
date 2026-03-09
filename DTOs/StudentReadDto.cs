@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace demoEFapp.DTOs
+﻿namespace demoEFapp.DTOs
 {
-    public class StudentReadDto : Controller
+    public class StudentReadDto
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public int StudentId { get; set; }
+        public string StudentName { get; set; }
+        public bool IsActive { get; set; }
+        public int StudentAge { get; set; }
+        public string? PhotoName { get; set; }
     }
 }
