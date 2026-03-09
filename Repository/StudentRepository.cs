@@ -27,6 +27,10 @@ namespace demoEFapp.Repositoy
         public void DeleteStudent(int id)
         {
             Student student = _dbContext.Students.FirstOrDefault(x => x.StudentId == id);
+
+            if (student == null)
+                return;
+
             _dbContext.Students.Remove(student);
             _dbContext.SaveChanges();
         }

@@ -39,11 +39,37 @@ namespace demoEFapp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int pageNumber = 1, int pageSize = 5)
         {
-            List<Student> students = _studentRepository.GetAllStudents();
-            return View(students);
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageSize < 1) pageSize = 5;
+            if (pageSize > 50) pageSize = 50;
+
+            var students = _studentRepository.GetAllStudents(); // List<Student>
+
+            var totalCount = students.Count;
+            var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+
+            if (totalPages > 0 && pageNumber > totalPages)
+                pageNumber = totalPages;
+
+            var pageItems = students
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            var vm = new StudentIndexVM
+            {
+                Students = pageItems,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = totalPages
+            };
+
+            return View(vm);
         }
+
 
         [HttpGet]
         [Authorize(Roles = "Admin,Manager")]

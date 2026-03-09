@@ -17,20 +17,41 @@ namespace demoEFapp.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 5)
         {
+            if (pageNumber < 1)
+                pageNumber = 1;
+
+            if (pageSize < 1)
+                pageSize = 5;
+
             var students = _studentRepository.GetAllStudents();
 
-            var studentDtos = students.Select(s => new StudentReadDto
-            {
-                StudentId = s.StudentId,
-                StudentName = s.StudentName,
-                IsActive = s.IsActive,
-                StudentAge = s.StudentAge,
-                PhotoName = s.PhotoName
-            }).ToList();
+            var totalCount = students.Count();
 
-            return Ok(studentDtos);
+            var pagedStudents = students
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .Select(s => new StudentReadDto
+                {
+                    StudentId = s.StudentId,
+                    StudentName = s.StudentName,
+                    IsActive = s.IsActive,
+                    StudentAge = s.StudentAge,
+                    PhotoName = s.PhotoName
+                })
+                .ToList();
+
+            var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+
+            return Ok(new
+            {
+                pageNumber = pageNumber,
+                pageSize = pageSize,
+                totalCount = totalCount,
+                totalPages = totalPages,
+                data = pagedStudents
+            });
         }
 
 
@@ -113,6 +134,13 @@ namespace demoEFapp.Controllers.Api
             _studentRepository.UpdateStudent(student);
 
             //204 is returned from no content
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _studentRepository.DeleteStudent(id);
             return NoContent();
         }
     }
