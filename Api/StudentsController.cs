@@ -89,5 +89,30 @@ namespace demoEFapp.Controllers.Api
 
             return CreatedAtAction(nameof(GetById), new { id = student.StudentId }, studentReadDto);
         }
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, StudentUpdateDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var student = _studentRepository.GetAllStudents()
+                            .FirstOrDefault(s => s.StudentId == id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            student.StudentName = dto.StudentName;
+            student.StudentAge = dto.StudentAge;
+            student.IsActive = dto.IsActive;
+            student.PhotoName = dto.PhotoName;
+
+            _studentRepository.UpdateStudent(student);
+
+            return NoContent();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace demoEFapp.Models
 
         public bool IsActive { get; set; }
 
-        [Range(5, 18)]
+        [Range(18, 100)]
         public int StudentAge { get; set; }
 
         public string? PhotoName { get; set; }
